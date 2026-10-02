@@ -1,0 +1,4077 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Giovanna & Guilherme | Nosso Casamento</title>
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           VARIÁVEIS
+        ====================================================== */
+
+        :root {
+
+            --azul: #0b1f3a;
+            --azul-claro: #163a62;
+            --azul-medio: #234b73;
+
+            --dourado: #c9a45c;
+            --dourado-claro: #dfc27c;
+
+            --branco: #ffffff;
+            --creme: #f8f7f3;
+
+            --texto: #0b1f3a;
+            --texto-suave: rgba(11,31,58,0.68);
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            width: 100%;
+
+            min-height: 100%;
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            background: var(--branco);
+
+            color: var(--texto);
+
+            font-family: 'Montserrat', sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =====================================================
+           ABERTURA
+        ====================================================== */
+
+        .abertura {
+
+            position: fixed;
+
+            inset: 0;
+
+            width: 100%;
+
+            height: 100dvh;
+
+            min-height: 500px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    #163a62 0%,
+                    var(--azul) 65%,
+                    #07162a 100%
+                );
+
+            z-index: 1000;
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transition:
+                opacity 1.6s ease,
+                visibility 1.6s ease;
+
+            overflow: hidden;
+
+        }
+
+
+        .abertura.fechar {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+        }
+
+
+        /* =====================================================
+           MOLDURA
+        ====================================================== */
+
+        .moldura {
+
+            position: absolute;
+
+            inset: clamp(14px, 2.5vw, 35px);
+
+            border: 1px solid
+                rgba(201,164,92,0.55);
+
+            pointer-events: none;
+
+        }
+
+
+        .moldura::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 7px;
+
+            border: 1px solid
+                rgba(255,255,255,0.12);
+
+        }
+
+
+        /* =====================================================
+           CANTOS DOURADOS
+        ====================================================== */
+
+        .canto {
+
+            position: absolute;
+
+            width: clamp(45px, 7vw, 90px);
+
+            height: clamp(45px, 7vw, 90px);
+
+            border-color: var(--dourado);
+
+            border-style: solid;
+
+            opacity: 0.85;
+
+        }
+
+
+        .canto-superior-esquerdo {
+
+            top: clamp(14px, 2.5vw, 35px);
+
+            left: clamp(14px, 2.5vw, 35px);
+
+            border-width: 2px 0 0 2px;
+
+        }
+
+
+        .canto-superior-direito {
+
+            top: clamp(14px, 2.5vw, 35px);
+
+            right: clamp(14px, 2.5vw, 35px);
+
+            border-width: 2px 2px 0 0;
+
+        }
+
+
+        .canto-inferior-esquerdo {
+
+            bottom: clamp(14px, 2.5vw, 35px);
+
+            left: clamp(14px, 2.5vw, 35px);
+
+            border-width: 0 0 2px 2px;
+
+        }
+
+
+        .canto-inferior-direito {
+
+            bottom: clamp(14px, 2.5vw, 35px);
+
+            right: clamp(14px, 2.5vw, 35px);
+
+            border-width: 0 2px 2px 0;
+
+        }
+
+
+        /* =====================================================
+           ORNAMENTOS
+        ====================================================== */
+
+        .ornamento {
+
+            position: absolute;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: var(--dourado);
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(18px, 3vw, 26px);
+
+            letter-spacing: 7px;
+
+        }
+
+
+        .ornamento-topo {
+
+            top: 13%;
+
+        }
+
+
+        .ornamento-base {
+
+            bottom: 11%;
+
+        }
+
+
+        /* =====================================================
+           CONTEÚDO DA ABERTURA
+        ====================================================== */
+
+        .conteudo-abertura {
+
+            width: min(90%, 720px);
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 5;
+
+            padding:
+                clamp(30px, 6vw, 70px)
+                clamp(20px, 5vw, 60px);
+
+        }
+
+
+        .pre-titulo {
+
+            font-size: clamp(8px, 1.3vw, 11px);
+
+            letter-spacing: clamp(3px, 0.7vw, 6px);
+
+            text-transform: uppercase;
+
+            color: var(--dourado-claro);
+
+            font-weight: 400;
+
+            margin-bottom: 28px;
+
+            opacity: 0;
+
+            animation: fadeUp 1.5s ease forwards;
+
+        }
+
+
+        /* =====================================================
+           ENVELOPE
+        ====================================================== */
+
+        .envelope-container {
+
+            position: relative;
+
+            width: min(88vw, 430px);
+
+            height: 285px;
+
+            margin: 0 auto;
+
+            perspective: 1200px;
+
+        }
+
+
+        .envelope {
+
+            position: absolute;
+
+            width: 100%;
+
+            height: 245px;
+
+            left: 0;
+
+            bottom: 0;
+
+            transform-style: preserve-3d;
+
+        }
+
+
+        /* =====================================================
+           CARTÃO DENTRO DO ENVELOPE
+        ====================================================== */
+
+        .cartao-envelope {
+
+            position: absolute;
+
+            width: 82%;
+
+            height: 180px;
+
+            left: 9%;
+
+            top: 32px;
+
+            background: var(--branco);
+
+            border:
+                1px solid
+                rgba(201,164,92,0.55);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            z-index: 3;
+
+            transform:
+                translateY(75px);
+
+            opacity: 0;
+
+            transition:
+                transform 1.3s ease,
+                opacity 0.8s ease;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,0.15);
+
+        }
+
+
+        .cartao-envelope small {
+
+            color: var(--dourado);
+
+            font-size: 8px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .cartao-envelope h2 {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            color: var(--azul);
+
+            font-size: 30px;
+
+            font-weight: 400;
+
+            margin: 14px 0;
+
+        }
+
+
+        .cartao-envelope span {
+
+            color: var(--azul);
+
+            font-size: 9px;
+
+            letter-spacing: 4px;
+
+        }
+
+
+        /* =====================================================
+           CORPO DO ENVELOPE
+        ====================================================== */
+
+        .envelope-corpo {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #fdfcf8,
+                    #eee9dd
+                );
+
+            border-radius: 4px;
+
+            box-shadow:
+                0 25px 55px
+                rgba(0,0,0,0.35);
+
+            overflow: hidden;
+
+            z-index: 1;
+
+        }
+
+
+        .envelope-corpo::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: 0;
+
+            width: 100%;
+
+            height: 70%;
+
+            background: #e8e1d2;
+
+            clip-path:
+                polygon(
+                    0 100%,
+                    50% 0,
+                    100% 100%
+                );
+
+            z-index: 2;
+
+        }
+
+
+        /* =====================================================
+           ABA DO ENVELOPE
+        ====================================================== */
+
+        .aba-envelope {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 145px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #f7f4ec,
+                    #ddd5c5
+                );
+
+            clip-path:
+                polygon(
+                    0 0,
+                    100% 0,
+                    50% 100%
+                );
+
+            transform-origin: top center;
+
+            z-index: 5;
+
+            transition:
+                transform 1.2s
+                cubic-bezier(.68,-0.4,.27,1.4);
+
+            box-shadow:
+                0 3px 5px
+                rgba(0,0,0,0.08);
+
+        }
+
+
+        /* =====================================================
+           SELO DE CERA
+        ====================================================== */
+
+        .selo-cera {
+
+            position: absolute;
+
+            width: 72px;
+
+            height: 72px;
+
+            left: 50%;
+
+            top: 112px;
+
+            transform:
+                translateX(-50%);
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    #b94b50,
+                    #741d28 65%,
+                    #4b1019 100%
+                );
+
+            z-index: 10;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #f3d99b;
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 21px;
+
+            font-weight: 600;
+
+            letter-spacing: 1px;
+
+            box-shadow:
+
+                inset 3px 3px 7px
+                rgba(255,255,255,0.2),
+
+                inset -4px -5px 8px
+                rgba(0,0,0,0.35),
+
+                0 8px 18px
+                rgba(0,0,0,0.35);
+
+            transition:
+                transform 0.6s ease,
+                opacity 0.6s ease;
+
+        }
+
+
+        .selo-cera::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 6px;
+
+            border:
+                1px solid
+                rgba(243,217,155,0.35);
+
+            border-radius: 50%;
+
+        }
+
+
+        /* =====================================================
+           BRILHO
+        ====================================================== */
+
+        .brilho-envelope {
+
+            position: absolute;
+
+            width: 30px;
+
+            height: 30px;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%)
+                scale(0);
+
+            z-index: 20;
+
+            pointer-events: none;
+
+            opacity: 0;
+
+        }
+
+
+        .brilho-envelope::before,
+        .brilho-envelope::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            width: 100%;
+
+            height: 3px;
+
+            background:
+                var(--dourado-claro);
+
+            box-shadow:
+                0 0 12px
+                var(--dourado-claro);
+
+            transform:
+                translate(-50%, -50%);
+
+        }
+
+
+        .brilho-envelope::after {
+
+            transform:
+                translate(-50%, -50%)
+                rotate(90deg);
+
+        }
+
+
+        .envelope.abrindo
+        .brilho-envelope {
+
+            animation:
+                explosaoBrilho
+                1.4s ease-out
+                0.25s forwards;
+
+        }
+
+
+        @keyframes explosaoBrilho {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0);
+
+            }
+
+            20% {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1);
+
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(7);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           ABERTURA DO ENVELOPE
+        ====================================================== */
+
+        .envelope.abrindo
+        .aba-envelope {
+
+            transform:
+                rotateX(-180deg);
+
+        }
+
+
+        .envelope.abrindo
+        .cartao-envelope {
+
+            transform:
+                translateY(-95px);
+
+            opacity: 1;
+
+        }
+
+
+        .envelope.abrindo
+        .selo-cera {
+
+            transform:
+                translateX(-50%)
+                scale(0.15)
+                rotate(25deg);
+
+            opacity: 0;
+
+        }
+
+
+        /* =====================================================
+           TEXTO DA ABERTURA
+        ====================================================== */
+
+        .texto-convite {
+
+            width: min(100%, 500px);
+
+            margin: 0 auto;
+
+            font-size: clamp(10px, 1.6vw, 13px);
+
+            line-height: 1.9;
+
+            letter-spacing: 0.3px;
+
+            color: rgba(255,255,255,0.78);
+
+            font-weight: 300;
+
+            opacity: 0;
+
+            animation:
+                fadeUp 1.5s ease forwards;
+
+            animation-delay: 0.6s;
+
+        }
+
+
+        /* =====================================================
+           BOTÃO DE ABERTURA
+        ====================================================== */
+
+        #abrirConvite {
+
+            margin-top: clamp(28px, 5vw, 42px);
+
+            padding:
+                clamp(12px, 2vw, 15px)
+                clamp(25px, 4vw, 40px);
+
+            background: transparent;
+
+            border: 1px solid var(--dourado);
+
+            color: var(--branco);
+
+            font-family: 'Montserrat', sans-serif;
+
+            font-size: clamp(9px, 1.3vw, 11px);
+
+            letter-spacing: clamp(2px, 0.5vw, 4px);
+
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            position: relative;
+
+            overflow: hidden;
+
+            opacity: 0;
+
+            animation:
+                fadeUp 1.5s ease forwards;
+
+            animation-delay: 0.9s;
+
+            transition:
+                color 0.4s ease,
+                border-color 0.4s ease,
+                transform 0.4s ease;
+
+        }
+
+
+        #abrirConvite::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background: var(--dourado);
+
+            transform:
+                translateY(100%);
+
+            transition:
+                transform 0.4s ease;
+
+            z-index: -1;
+
+        }
+
+
+        #abrirConvite:hover {
+
+            color: var(--azul);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        #abrirConvite:hover::before {
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* =====================================================
+           ANIMAÇÕES
+        ====================================================== */
+
+        @keyframes fadeUp {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(18px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+        @keyframes fadeIn {
+
+            from {
+
+                opacity: 0;
+
+            }
+
+            to {
+
+                opacity: 1;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CONVITE
+        ====================================================== */
+
+        #convite {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                opacity 1.8s ease;
+
+            background: var(--branco);
+
+        }
+
+
+        #convite.mostrar {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+
+        /* =====================================================
+           SEÇÕES
+        ====================================================== */
+
+        section:not(.abertura) {
+
+            position: relative;
+
+            width: 100%;
+
+            padding:
+                clamp(80px, 10vw, 130px)
+                20px;
+
+            overflow: hidden;
+
+        }
+
+
+        .container {
+
+            width: min(1100px, 92%);
+
+            margin: 0 auto;
+
+        }
+
+
+        /* =====================================================
+           TÍTULOS DAS SEÇÕES
+        ====================================================== */
+
+        .titulo-secao {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .titulo-secao .pequeno {
+
+            display: block;
+
+            color: var(--dourado);
+
+            font-size: 10px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .titulo-secao h2 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            color: var(--azul);
+
+            font-weight: 300;
+
+            font-size: clamp(45px, 7vw, 70px);
+
+            line-height: 1;
+
+        }
+
+
+        .titulo-secao p {
+
+            max-width: 550px;
+
+            margin: 20px auto 0;
+
+            color: var(--texto-suave);
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =====================================================
+           CAPA DO CONVITE
+        ====================================================== */
+
+        .capa-convite {
+
+            min-height: 100dvh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+
+                linear-gradient(
+                    rgba(255,255,255,0.91),
+                    rgba(255,255,255,0.91)
+                ),
+
+                url("fotos/fundo.jpg")
+                center/cover
+                no-repeat;
+
+        }
+
+
+        .capa-convite .moldura {
+
+            inset: 20px;
+
+            border-color:
+                rgba(201,164,92,0.50);
+
+        }
+
+
+        .capa-convite .moldura::before {
+
+            border-color:
+                rgba(11,31,58,0.08);
+
+        }
+
+
+        .capa-pequeno {
+
+            color: var(--dourado);
+
+            font-size: 10px;
+
+            letter-spacing: 6px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .nomes {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            color: var(--azul);
+
+            font-size: clamp(65px, 12vw, 130px);
+
+            font-weight: 300;
+
+            line-height: 0.8;
+
+        }
+
+
+        .e {
+
+            display: block;
+
+            color: var(--dourado);
+
+            font-size: 35px;
+
+            margin: 25px 0;
+
+        }
+
+
+        .data {
+
+            color: var(--azul);
+
+            letter-spacing: 4px;
+
+            font-size: 12px;
+
+            margin-top: 35px;
+
+        }
+
+
+        /* =====================================================
+           GALERIA DE FOTOS
+        ====================================================== */
+
+        .fotos-casal {
+
+            position: relative;
+
+            background: var(--creme);
+
+            padding:
+                85px 0 !important;
+
+            overflow: hidden;
+
+        }
+
+
+        .galeria {
+
+            position: relative;
+
+            width: 100%;
+
+            overflow: hidden;
+
+        }
+
+
+        .galeria::before,
+        .galeria::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 100px;
+
+            z-index: 2;
+
+            pointer-events: none;
+
+        }
+
+
+        .galeria::before {
+
+            left: 0;
+
+            background:
+                linear-gradient(
+                    to right,
+                    var(--creme),
+                    transparent
+                );
+
+        }
+
+
+        .galeria::after {
+
+            right: 0;
+
+            background:
+                linear-gradient(
+                    to left,
+                    var(--creme),
+                    transparent
+                );
+
+        }
+
+
+        .galeria-track {
+
+            display: flex;
+
+            width: max-content;
+
+            gap: 22px;
+
+            animation:
+                passarFotos
+                32s
+                linear
+                infinite;
+
+        }
+
+
+        .foto-slide {
+
+            width: clamp(
+                230px,
+                28vw,
+                360px
+            );
+
+            height: clamp(
+                300px,
+                38vw,
+                450px
+            );
+
+            flex-shrink: 0;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(201,164,92,0.45);
+
+            padding: 7px;
+
+            background: var(--branco);
+
+        }
+
+
+        .foto-slide img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.7s ease;
+
+        }
+
+
+        .foto-slide:hover img {
+
+            transform: scale(1.04);
+
+        }
+
+
+        @keyframes passarFotos {
+
+            from {
+
+                transform: translateX(0);
+
+            }
+
+            to {
+
+                transform:
+                    translateX(
+                        calc(-50% - 11px)
+                    );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           NOSSA HISTÓRIA
+        ====================================================== */
+
+        .historia {
+
+            background:
+
+                linear-gradient(
+                    rgba(255,255,255,0.94),
+                    rgba(255,255,255,0.94)
+                ),
+
+                url("fotos/fundo.jpg")
+                center/cover
+                no-repeat;
+
+        }
+
+
+        .historia-conteudo {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+
+        }
+
+
+        .historia-foto {
+
+            min-height: 520px;
+
+            border:
+                1px solid
+                rgba(201,164,92,0.45);
+
+            padding: 10px;
+
+            background: white;
+
+        }
+
+
+        .historia-foto-inner {
+
+            height: 100%;
+
+            min-height: 500px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+            background: var(--creme);
+
+            color: var(--dourado);
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 25px;
+
+        }
+
+
+        .historia-foto-inner img {
+
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 500px;
+
+            object-fit: cover;
+
+        }
+
+
+        .historia-texto h3 {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            color: var(--azul);
+
+            font-size: 38px;
+
+            font-weight: 400;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .historia-texto p {
+
+            color: var(--texto-suave);
+
+            font-size: 13px;
+
+            line-height: 2.1;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        /* =====================================================
+           CONTADOR
+        ====================================================== */
+
+        .contador {
+
+            background:
+
+                linear-gradient(
+                    rgba(248,247,243,0.96),
+                    rgba(255,255,255,0.98)
+                );
+
+            text-align: center;
+
+        }
+
+
+        .contador-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            max-width: 800px;
+
+            margin: 0 auto;
+
+        }
+
+
+        .tempo {
+
+            padding: 25px;
+
+            border-right:
+                1px solid
+                rgba(11,31,58,0.14);
+
+        }
+
+
+        .tempo:last-child {
+
+            border-right: none;
+
+        }
+
+
+        .numero {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            color: var(--azul);
+
+            font-size:
+                clamp(45px, 7vw, 70px);
+
+            font-weight: 300;
+
+        }
+
+
+        .label {
+
+            margin-top: 5px;
+
+            color: var(--texto-suave);
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            font-size: 9px;
+
+        }
+
+
+        /* =====================================================
+           LOCALIZAÇÃO
+        ====================================================== */
+
+        .localizacao {
+
+            background:
+
+                linear-gradient(
+                    rgba(255,255,255,0.95),
+                    rgba(255,255,255,0.95)
+                ),
+
+                url("fotos/fundo.jpg")
+                center/cover
+                no-repeat;
+
+        }
+
+
+        .mapa {
+
+            width: 100%;
+
+            height:
+                clamp(
+                    300px,
+                    45vw,
+                    500px
+                );
+
+            border:
+                1px solid
+                rgba(201,164,92,0.45);
+
+            padding: 8px;
+
+            margin-bottom: 35px;
+
+            background: white;
+
+        }
+
+
+        .mapa iframe {
+
+            width: 100%;
+
+            height: 100%;
+
+            border: none;
+
+            border-radius: 8px;
+
+        }
+
+
+        .endereco {
+
+            text-align: center;
+
+        }
+
+
+        .endereco h3 {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            color: var(--azul);
+
+            font-size: 38px;
+
+            font-weight: 400;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .endereco p {
+
+            color: var(--texto-suave);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           BOTÕES
+        ====================================================== */
+
+        .botao {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding:
+                13px 30px;
+
+            border:
+                1px solid
+                var(--dourado);
+
+            color: var(--azul);
+
+            text-decoration: none;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            transition: 0.4s;
+
+        }
+
+
+        .botao:hover {
+
+            background:
+                var(--dourado);
+
+            color:
+                var(--branco);
+
+        }
+
+
+        /* =====================================================
+           DETALHES
+        ====================================================== */
+
+        .detalhes {
+
+            background:
+                var(--creme);
+
+        }
+
+
+        .detalhes-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .card {
+
+            border:
+                1px solid
+                rgba(11,31,58,0.13);
+
+            padding:
+                45px 30px;
+
+            text-align: center;
+
+            min-height: 300px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: 0.4s;
+
+            background:
+                rgba(255,255,255,0.92);
+
+        }
+
+
+        .card:hover {
+
+            transform:
+                translateY(-7px);
+
+            border-color:
+                var(--dourado);
+
+        }
+
+
+        .icone {
+
+            font-size: 28px;
+
+            color: var(--dourado);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .card h3 {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            color: var(--azul);
+
+            font-size: 34px;
+
+            font-weight: 400;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .card p {
+
+            color: var(--texto-suave);
+
+            font-size: 11px;
+
+            line-height: 1.9;
+
+            max-width: 240px;
+
+        }
+
+
+        /* =====================================================
+           CRONOGRAMA
+        ====================================================== */
+
+        .cronograma {
+
+            margin-top: 80px;
+
+            max-width: 750px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+        }
+
+
+        .evento {
+
+            display: grid;
+
+            grid-template-columns:
+                100px 1fr;
+
+            gap: 30px;
+
+            padding: 25px 0;
+
+            border-bottom:
+                1px solid
+                rgba(11,31,58,0.12);
+
+        }
+
+
+        .hora {
+
+            color: var(--dourado);
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 28px;
+
+        }
+
+
+        .evento h4 {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            color: var(--azul);
+
+            font-size: 27px;
+
+            font-weight: 400;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .evento p {
+
+            color: var(--texto-suave);
+
+            font-size: 11px;
+
+        }
+
+
+        /* =====================================================
+           FOTO FINAL DO CASAL
+        ====================================================== */
+
+        .foto-final {
+
+            position: relative;
+
+            width: 100%;
+
+            height: clamp(
+                550px,
+                75vh,
+                800px
+            );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            background: var(--azul);
+
+            padding: 0 !important;
+
+        }
+
+
+        .imagem-final {
+
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            z-index: 0;
+
+        }
+
+
+        .foto-final-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                linear-gradient(
+                    to bottom,
+                    rgba(11,31,58,0.22),
+                    rgba(11,31,58,0.65)
+                );
+
+            z-index: 1;
+
+        }
+
+
+        .foto-final-conteudo {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: min(90%, 700px);
+
+            color: var(--branco);
+
+        }
+
+
+        .foto-final-conteudo > span {
+
+            display: block;
+
+            color: var(--dourado-claro);
+
+            font-size: 10px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .foto-final-conteudo h2 {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size:
+                clamp(
+                    55px,
+                    9vw,
+                    90px
+                );
+
+            font-weight: 300;
+
+            line-height: 1;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .foto-final-conteudo p {
+
+            color:
+                rgba(255,255,255,0.9);
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .foto-final-conteudo
+        .ornamento-central {
+
+            margin:
+                25px auto;
+
+        }
+
+
+        .foto-final-conteudo
+        .linha-dourada {
+
+            background:
+                var(--dourado-claro);
+
+        }
+
+
+        .foto-final-conteudo
+        .losango {
+
+            background:
+                var(--dourado-claro);
+
+        }
+
+
+        /* =====================================================
+           RODAPÉ
+        ====================================================== */
+
+        footer {
+
+            padding:
+                90px 20px;
+
+            text-align: center;
+
+            background: var(--azul);
+
+            color: var(--branco);
+
+        }
+
+
+        footer .nomes-footer {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            color: var(--dourado-claro);
+
+            font-size: 45px;
+
+        }
+
+
+        footer p {
+
+            margin-top: 20px;
+
+            color:
+                rgba(255,255,255,0.72);
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        footer .ornamento-central {
+
+            margin-top: 35px;
+
+        }
+
+
+        /* =====================================================
+           ANIMAÇÃO DAS SEÇÕES
+        ====================================================== */
+
+        .animar {
+
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+
+            transition:
+                opacity 1s ease,
+                transform 1s ease;
+
+        }
+
+
+        .animar.visivel {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE
+        ====================================================== */
+
+        @media (max-width: 800px) {
+
+            section:not(.abertura) {
+
+                padding:
+                    75px 15px;
+
+            }
+
+
+            .historia-conteudo {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 40px;
+
+            }
+
+
+            .historia-foto {
+
+                min-height: 350px;
+
+            }
+
+
+            .historia-foto-inner {
+
+                min-height: 330px;
+
+            }
+
+
+            .historia-foto-inner img {
+
+                min-height: 330px;
+
+            }
+
+
+            .detalhes-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .card {
+
+                min-height: 250px;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .moldura {
+
+                inset: 10px;
+
+            }
+
+
+            .texto-convite {
+
+                font-size: 11px;
+
+                line-height: 1.8;
+
+                max-width: 330px;
+
+            }
+
+
+            .ornamento-topo {
+
+                top: 10%;
+
+            }
+
+
+            .ornamento-base {
+
+                bottom: 8%;
+
+            }
+
+
+            .canto {
+
+                width: 42px;
+
+                height: 42px;
+
+            }
+
+
+            .nomes {
+
+                font-size:
+                    clamp(
+                        58px,
+                        18vw,
+                        85px
+                    );
+
+            }
+
+
+            .contador-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .tempo {
+
+                border-right: none;
+
+                border-bottom:
+                    1px solid
+                    rgba(11,31,58,0.14);
+
+            }
+
+
+            .tempo:nth-child(odd) {
+
+                border-right:
+                    1px solid
+                    rgba(11,31,58,0.14);
+
+            }
+
+
+            .tempo:nth-child(3),
+            .tempo:nth-child(4) {
+
+                border-bottom: none;
+
+            }
+
+
+            .evento {
+
+                grid-template-columns:
+                    75px 1fr;
+
+                gap: 15px;
+
+            }
+
+
+            .hora {
+
+                font-size: 23px;
+
+            }
+
+
+            .evento h4 {
+
+                font-size: 23px;
+
+            }
+
+
+            .mapa {
+
+                height: 350px;
+
+            }
+
+
+            .foto-slide {
+
+                width: 230px;
+
+                height: 310px;
+
+            }
+
+
+            .galeria-track {
+
+                gap: 15px;
+
+            }
+
+
+            .foto-final {
+
+                height: 600px;
+
+            }
+
+
+            .foto-final-conteudo h2 {
+
+                font-size: 58px;
+
+            }
+
+
+            .foto-final-conteudo > span {
+
+                font-size: 8px;
+
+                letter-spacing: 3px;
+
+            }
+
+
+            footer .nomes-footer {
+
+                font-size: 32px;
+
+            }
+
+
+            /* ENVELOPE NO CELULAR */
+
+            .envelope-container {
+
+                width: 88vw;
+
+                max-width: 380px;
+
+                height: 250px;
+
+            }
+
+
+            .envelope {
+
+                height: 215px;
+
+            }
+
+
+            .aba-envelope {
+
+                height: 125px;
+
+            }
+
+
+            .cartao-envelope {
+
+                height: 160px;
+
+                top: 28px;
+
+            }
+
+
+            .cartao-envelope h2 {
+
+                font-size: 24px;
+
+                margin: 10px 0;
+
+            }
+
+
+            .selo-cera {
+
+                width: 62px;
+
+                height: 62px;
+
+                top: 97px;
+
+                font-size: 18px;
+
+            }
+
+        }
+
+
+        @media (max-height: 650px) {
+
+            .ornamento-topo,
+            .ornamento-base {
+
+                display: none;
+
+            }
+
+
+            .conteudo-abertura {
+
+                padding-top: 20px;
+
+                padding-bottom: 20px;
+
+            }
+
+
+            .pre-titulo {
+
+                margin-bottom: 12px;
+
+            }
+
+
+            .texto-convite {
+
+                line-height: 1.6;
+
+            }
+
+
+            #abrirConvite {
+
+                margin-top: 20px;
+
+            }
+
+
+            .envelope-container {
+
+                height: 220px;
+
+            }
+
+
+            .envelope {
+
+                height: 190px;
+
+            }
+
+
+            .aba-envelope {
+
+                height: 110px;
+
+            }
+
+
+            .selo-cera {
+
+                top: 82px;
+
+                width: 55px;
+
+                height: 55px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           ACESSIBILIDADE
+        ====================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            * {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+
+            }
+
+
+            .galeria-track {
+
+                animation: none;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ABERTURA COM ENVELOPE
+    ====================================================== -->
+
+    <section
+        class="abertura"
+        id="abertura"
+    >
+
+        <div class="moldura"></div>
+
+
+        <div
+            class="canto canto-superior-esquerdo"
+        ></div>
+
+        <div
+            class="canto canto-superior-direito"
+        ></div>
+
+        <div
+            class="canto canto-inferior-esquerdo"
+        ></div>
+
+        <div
+            class="canto canto-inferior-direito"
+        ></div>
+
+
+        <div
+            class="ornamento ornamento-topo"
+        >
+            ✦
+        </div>
+
+
+        <div
+            class="ornamento ornamento-base"
+        >
+            ✦
+        </div>
+
+
+        <div class="conteudo-abertura">
+
+
+            <p class="pre-titulo">
+
+                UM MOMENTO ESPECIAL
+
+            </p>
+
+
+            <!-- =================================================
+                 ENVELOPE
+            ================================================== -->
+
+            <div class="envelope-container">
+
+
+                <div
+                    class="envelope"
+                    id="envelope"
+                >
+
+
+                    <!-- CARTÃO -->
+
+                    <div class="cartao-envelope">
+
+
+                        <small>
+
+                            CONVITE DE CASAMENTO
+
+                        </small>
+
+
+                        <h2>
+
+                            Giovanna & Guilherme
+
+                        </h2>
+
+
+                        <span>
+
+                            17 • 07 • 2027
+
+                        </span>
+
+
+                    </div>
+
+
+                    <!-- CORPO DO ENVELOPE -->
+
+                    <div
+                        class="envelope-corpo"
+                    ></div>
+
+
+                    <!-- ABA -->
+
+                    <div
+                        class="aba-envelope"
+                    ></div>
+
+
+                    <!-- SELO DE CERA -->
+
+                    <div
+                        class="selo-cera"
+                    >
+
+                        G&G
+
+                    </div>
+
+
+                    <!-- BRILHO -->
+
+                    <div
+                        class="brilho-envelope"
+                    ></div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <p class="texto-convite">
+
+                Com muita alegria, queremos compartilhar
+                com você um dos momentos mais especiais
+                das nossas vidas.
+
+                <br>
+
+                Será uma honra ter você conosco
+                para celebrar o início da nossa história.
+
+            </p>
+
+
+            <button id="abrirConvite">
+
+                Abrir convite
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONVITE COMPLETO
+    ====================================================== -->
+
+    <main id="convite">
+
+
+        <!-- =================================================
+             CAPA
+        ================================================== -->
+
+        <section class="capa-convite">
+
+            <div class="moldura"></div>
+
+
+            <div class="container">
+
+
+                <p class="capa-pequeno">
+
+                    COM A BÊNÇÃO DE DEUS
+
+                </p>
+
+
+                <h1 class="nomes">
+
+                    GIOVANNA
+
+                    <span class="e">&</span>
+
+                    GUILHERME
+
+                </h1>
+
+
+                <div class="ornamento-central">
+
+                    <span class="linha-dourada"></span>
+
+                    <span class="losango"></span>
+
+                    <span class="linha-dourada"></span>
+
+                </div>
+
+
+                <p class="data">
+
+                    17 • 07 • 2027
+
+                </p>
+
+
+                <p
+                    class="ornamento"
+                    style="
+                        position:static;
+                        transform:none;
+                        margin-top:35px;
+                    "
+                >
+
+                    ✦
+
+                </p>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOTOS DO CASAL
+        ================================================== -->
+
+        <section class="fotos-casal">
+
+
+            <div class="container">
+
+
+                <div class="titulo-secao animar">
+
+                    <span class="pequeno">
+
+                        NOSSOS MOMENTOS
+
+                    </span>
+
+
+                    <h2>
+
+                        Um pouco de nós
+
+                    </h2>
+
+
+                    <div class="ornamento-central">
+
+                        <span class="linha-dourada"></span>
+
+                        <span class="losango"></span>
+
+                        <span class="linha-dourada"></span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="galeria">
+
+
+                <div class="galeria-track">
+
+
+                    <div class="foto-slide">
+
+                        <img
+                            src="fotos/foto1.jpg"
+                            alt="Giovanna e Guilherme"
+                        >
+
+                    </div>
+
+
+                    <div class="foto-slide">
+
+                        <img
+                            src="fotos/foto2.jpg"
+                            alt="Giovanna e Guilherme"
+                        >
+
+                    </div>
+
+
+                    <div class="foto-slide">
+
+                        <img
+                            src="fotos/foto3.jpg"
+                            alt="Giovanna e Guilherme"
+                        >
+
+                    </div>
+
+
+                    <div class="foto-slide">
+
+                        <img
+                            src="fotos/foto4.jpg"
+                            alt="Giovanna e Guilherme"
+                        >
+
+                    </div>
+
+
+                    <div class="foto-slide">
+
+                        <img
+                            src="fotos/foto5.jpg"
+                            alt="Giovanna e Guilherme"
+                        >
+
+                    </div>
+
+
+
+                    <!-- REPETIÇÃO PARA ANIMAÇÃO CONTÍNUA -->
+
+
+                    <div class="foto-slide">
+
+                        <img
+                            src="fotos/foto1.jpg"
+                            alt="Giovanna e Guilherme"
+                        >
+
+                    </div>
+
+
+                    <div class="foto-slide">
+
+                        <img
+                            src="fotos/foto2.jpg"
+                            alt="Giovanna e Guilherme"
+                        >
+
+                    </div>
+
+
+                    <div class="foto-slide">
+
+                        <img
+                            src="fotos/foto3.jpg"
+                            alt="Giovanna e Guilherme"
+                        >
+
+                    </div>
+
+
+                    <div class="foto-slide">
+
+                        <img
+                            src="fotos/foto4.jpg"
+                            alt="Giovanna e Guilherme"
+                        >
+
+                    </div>
+
+
+                    <div class="foto-slide">
+
+                        <img
+                            src="fotos/foto5.jpg"
+                            alt="Giovanna e Guilherme"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NOSSA HISTÓRIA
+        ================================================== -->
+
+        <section class="historia">
+
+
+            <div class="container">
+
+
+                <div class="titulo-secao animar">
+
+                    <span class="pequeno">
+
+                        UM POUCO DE NÓS
+
+                    </span>
+
+
+                    <h2>
+
+                        Nossa história
+
+                    </h2>
+
+
+                    <div class="ornamento-central">
+
+                        <span class="linha-dourada"></span>
+
+                        <span class="losango"></span>
+
+                        <span class="linha-dourada"></span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="historia-conteudo">
+
+
+                    <div class="historia-foto animar">
+
+                        <div class="historia-foto-inner">
+
+                            <img
+                                src="fotos/foto1.jpg"
+                                alt="Giovanna e Guilherme"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="historia-texto animar">
+
+
+                        <h3>
+
+                            Onde tudo começou...
+
+                        </h3>
+
+
+                        <p>
+
+                            Existem encontros que parecem
+                            acontecer por acaso, mas que
+                            mudam para sempre o rumo das
+                            nossas vidas.
+
+                        </p>
+
+
+                        <p>
+
+                            Nossa história começou com um
+                            encontro, alguns sorrisos e muitos
+                            momentos que, pouco a pouco,
+                            transformaram duas histórias em
+                            uma só.
+
+                        </p>
+
+
+                        <p>
+
+                            Hoje, escolhemos celebrar o amor
+                            e dar início a um novo capítulo,
+                            cercados pelas pessoas que fazem
+                            parte da nossa história.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTAGEM REGRESSIVA
+        ================================================== -->
+
+        <section class="contador">
+
+
+            <div class="container">
+
+
+                <div class="titulo-secao animar">
+
+                    <span class="pequeno">
+
+                        ESTÁ CHEGANDO
+
+                    </span>
+
+
+                    <h2>
+
+                        Contagem regressiva
+
+                    </h2>
+
+
+                    <div class="ornamento-central">
+
+                        <span class="linha-dourada"></span>
+
+                        <span class="losango"></span>
+
+                        <span class="linha-dourada"></span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="contador-grid animar">
+
+
+                    <div class="tempo">
+
+                        <div
+                            class="numero"
+                            id="dias"
+                        >
+                            00
+                        </div>
+
+                        <div class="label">
+                            Dias
+                        </div>
+
+                    </div>
+
+
+                    <div class="tempo">
+
+                        <div
+                            class="numero"
+                            id="horas"
+                        >
+                            00
+                        </div>
+
+                        <div class="label">
+                            Horas
+                        </div>
+
+                    </div>
+
+
+                    <div class="tempo">
+
+                        <div
+                            class="numero"
+                            id="minutos"
+                        >
+                            00
+                        </div>
+
+                        <div class="label">
+                            Minutos
+                        </div>
+
+                    </div>
+
+
+                    <div class="tempo">
+
+                        <div
+                            class="numero"
+                            id="segundos"
+                        >
+                            00
+                        </div>
+
+                        <div class="label">
+                            Segundos
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LOCALIZAÇÃO
+        ================================================== -->
+
+        <section class="localizacao">
+
+
+            <div class="container">
+
+
+                <div class="titulo-secao animar">
+
+
+                    <span class="pequeno">
+
+                        COMO CHEGAR
+
+                    </span>
+
+
+                    <h2>
+
+                        Localização
+
+                    </h2>
+
+
+                    <div class="ornamento-central">
+
+                        <span class="linha-dourada"></span>
+
+                        <span class="losango"></span>
+
+                        <span class="linha-dourada"></span>
+
+                    </div>
+
+
+                    <p>
+
+                        Será uma alegria celebrar
+                        esse momento ao seu lado.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="mapa animar">
+
+
+                    <iframe
+
+                        src="https://www.google.com/maps?q=Ch%C3%A1cara%20Faundes%203%2C%20Ribeir%C3%A3o%20Pires%2C%20SP&output=embed"
+
+                        width="100%"
+
+                        height="350"
+
+                        style="border:0;"
+
+                        allowfullscreen=""
+
+                        loading="lazy"
+
+                        referrerpolicy="no-referrer-when-downgrade">
+
+                    </iframe>
+
+
+                </div>
+
+
+
+                <div class="endereco animar">
+
+
+                    <h3>
+
+                        Chácara Faundes 3
+
+                    </h3>
+
+
+                    <p>
+
+                        R. Silvio Nunes, 84 - Tanque Caio
+
+                        <br>
+
+                        Ribeirão Pires — SP
+
+                        <br>
+
+                        CEP 09436-330
+
+                    </p>
+
+
+                    <a
+
+                        href="https://share.google/SxNkiNRiyywjU3487"
+
+                        target="_blank"
+
+                        rel="noopener noreferrer"
+
+                        class="botao"
+
+                    >
+
+                        Ver no Google Maps
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DETALHES
+        ================================================== -->
+
+        <section class="detalhes">
+
+
+            <div class="container">
+
+
+                <div class="titulo-secao animar">
+
+
+                    <span class="pequeno">
+
+                        TUDO PREPARADO
+
+                    </span>
+
+
+                    <h2>
+
+                        Detalhes
+
+                    </h2>
+
+
+                    <div class="ornamento-central">
+
+                        <span class="linha-dourada"></span>
+
+                        <span class="losango"></span>
+
+                        <span class="linha-dourada"></span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="detalhes-grid">
+
+
+                    <!-- LISTA DE PRESENTES -->
+
+                    <div class="card animar">
+
+
+                        <div class="icone">
+
+                            ♡
+
+                        </div>
+
+
+                        <h3>
+
+                            Lista de presentes
+
+                        </h3>
+
+
+                        <p>
+
+                            Sua presença é o nosso
+                            maior presente.
+
+                            <br><br>
+
+                            Mas, se desejar nos presentear,
+                            preparamos uma lista com
+                            algumas opções.
+
+                        </p>
+
+
+                        <a
+                            href="#"
+                            class="botao"
+                        >
+
+                            Ver lista
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <!-- CONFIRMAÇÃO -->
+
+                    <div class="card animar">
+
+
+                        <div class="icone">
+
+                            ✉
+
+                        </div>
+
+
+                        <h3>
+
+                            Confirme sua presença
+
+                        </h3>
+
+
+                        <p>
+
+                            Para que possamos preparar
+                            tudo com muito carinho,
+                            pedimos que confirme sua
+                            presença.
+
+                        </p>
+
+
+                        <a
+
+                            href="https://wa.me/5513982297098?text=Ol%C3%A1!%20💕%20Vim%20pelo%20convite%20de%20casamento%20da%20Giovanna%20%26%20Guilherme%20e%20gostaria%20de%20confirmar%20minha%20presen%C3%A7a.%20💍❤️"
+
+                            target="_blank"
+
+                            rel="noopener noreferrer"
+
+                            class="botao"
+
+                        >
+
+                            💌 Confirmar presença
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <!-- TRAJE -->
+
+                    <div class="card animar">
+
+
+                        <div class="icone">
+
+                            ✦
+
+                        </div>
+
+
+                        <h3>
+
+                            Dress code
+
+                        </h3>
+
+
+                        <p>
+
+                            Para este momento especial,
+                            sugerimos traje social.
+
+                            <br><br>
+
+                            Venha celebrar conosco
+                            com elegância e alegria.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CRONOGRAMA
+                ================================================== -->
+
+                <div class="cronograma">
+
+
+                    <div class="titulo-secao animar">
+
+
+                        <span class="pequeno">
+
+                            O GRANDE DIA
+
+                        </span>
+
+
+                        <h2>
+
+                            Cronograma
+
+                        </h2>
+
+
+                        <div class="ornamento-central">
+
+                            <span class="linha-dourada"></span>
+
+                            <span class="losango"></span>
+
+                            <span class="linha-dourada"></span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="evento animar">
+
+
+                        <div class="hora">
+
+                            16:00
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+
+                                Recepção dos convidados
+
+                            </h4>
+
+
+                            <p>
+
+                                Chegada e acolhimento
+                                dos convidados.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="evento animar">
+
+
+                        <div class="hora">
+
+                            17:00
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+
+                                Cerimônia
+
+                            </h4>
+
+
+                            <p>
+
+                                O momento em que
+                                diremos nosso "sim".
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="evento animar">
+
+
+                        <div class="hora">
+
+                            18:30
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+
+                                Recepção
+
+                            </h4>
+
+
+                            <p>
+
+                                Celebração, jantar e
+                                muitos momentos especiais.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="evento animar">
+
+
+                        <div class="hora">
+
+                            21:00
+
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+
+                                Festa
+
+                            </h4>
+
+
+                            <p>
+
+                                Vamos celebrar juntos
+                                até o último minuto!
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOTO FINAL DO CASAL
+        ================================================== -->
+
+        <section class="foto-final">
+
+
+            <img
+                src="fotos/foto5.jpg"
+                alt="Giovanna e Guilherme"
+                class="imagem-final"
+            >
+
+
+            <div class="foto-final-overlay"></div>
+
+
+            <div class="foto-final-conteudo animar">
+
+
+                <span>
+
+                    O NOSSO PRÓXIMO CAPÍTULO
+
+                </span>
+
+
+                <h2>
+
+                    Começa aqui.
+
+                </h2>
+
+
+                <div class="ornamento-central">
+
+                    <span class="linha-dourada"></span>
+
+                    <span class="losango"></span>
+
+                    <span class="linha-dourada"></span>
+
+                </div>
+
+
+                <p>
+
+                    E queremos vocês ao nosso lado.
+
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             RODAPÉ
+        ================================================== -->
+
+        <footer>
+
+
+            <div
+                class="ornamento"
+                style="
+                    position:static;
+                    transform:none;
+                "
+            >
+
+                ✦
+
+            </div>
+
+
+            <div class="nomes-footer">
+
+                GIOVANNA & GUILHERME
+
+            </div>
+
+
+            <p>
+
+                ESPERAMOS VOCÊ PARA CELEBRAR
+                ESTE MOMENTO CONOSCO
+
+            </p>
+
+
+            <div class="ornamento-central">
+
+                <span class="linha-dourada"></span>
+
+                <span class="losango"></span>
+
+                <span class="linha-dourada"></span>
+
+            </div>
+
+
+            <p>
+
+                Com amor, Giovanna & Guilherme
+
+            </p>
+
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         MÚSICA
+    ====================================================== -->
+
+    <audio
+        id="musica"
+        loop
+    >
+
+        <source
+            src="musica.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           ELEMENTOS
+        ====================================================== */
+
+        const botao =
+            document.getElementById(
+                "abrirConvite"
+            );
+
+
+        const abertura =
+            document.getElementById(
+                "abertura"
+            );
+
+
+        const convite =
+            document.getElementById(
+                "convite"
+            );
+
+
+        const musica =
+            document.getElementById(
+                "musica"
+            );
+
+
+        const envelope =
+            document.getElementById(
+                "envelope"
+            );
+
+
+
+        /* =====================================================
+           ABRIR CONVITE
+        ====================================================== */
+
+        botao.addEventListener(
+            "click",
+            function () {
+
+
+                /* ABRE O ENVELOPE */
+
+                envelope.classList.add(
+                    "abrindo"
+                );
+
+
+                /* MÚSICA */
+
+                musica.volume = 0.5;
+
+
+                musica.play().catch(
+                    function () {
+
+                        console.log(
+                            "A reprodução automática foi bloqueada."
+                        );
+
+                    }
+                );
+
+
+                /* FECHA A ABERTURA */
+
+                setTimeout(
+                    function () {
+
+                        abertura.classList.add(
+                            "fechar"
+                        );
+
+                    },
+                    1100
+                );
+
+
+                /* MOSTRA O CONVITE */
+
+                setTimeout(
+                    function () {
+
+
+                        convite.classList.add(
+                            "mostrar"
+                        );
+
+
+                        document.body.style.overflowX =
+                            "hidden";
+
+
+                        document.body.style.overflowY =
+                            "auto";
+
+
+                        window.scrollTo({
+
+                            top: 0,
+
+                            behavior: "instant"
+
+                        });
+
+
+                    },
+
+                    1500
+
+                );
+
+
+            }
+
+        );
+
+
+
+        /* =====================================================
+           CONTAGEM REGRESSIVA
+
+           17 DE JULHO DE 2027
+           ÀS 17:00
+
+           JULHO = 6
+           (JavaScript começa os meses em 0)
+        ====================================================== */
+
+        const dataCasamento =
+            new Date(
+                2027,
+                6,
+                17,
+                17,
+                0,
+                0
+            ).getTime();
+
+
+
+        function atualizarContagem() {
+
+
+            const agora =
+                new Date().getTime();
+
+
+            const distancia =
+                dataCasamento - agora;
+
+
+
+            if (distancia <= 0) {
+
+
+                document.getElementById(
+                    "dias"
+                ).textContent = "00";
+
+
+                document.getElementById(
+                    "horas"
+                ).textContent = "00";
+
+
+                document.getElementById(
+                    "minutos"
+                ).textContent = "00";
+
+
+                document.getElementById(
+                    "segundos"
+                ).textContent = "00";
+
+
+                return;
+
+            }
+
+
+
+            const dias =
+                Math.floor(
+                    distancia /
+                    (1000 * 60 * 60 * 24)
+                );
+
+
+            const horas =
+                Math.floor(
+                    (
+                        distancia %
+                        (1000 * 60 * 60 * 24)
+                    )
+                    /
+                    (1000 * 60 * 60)
+                );
+
+
+            const minutos =
+                Math.floor(
+                    (
+                        distancia %
+                        (1000 * 60 * 60)
+                    )
+                    /
+                    (1000 * 60)
+                );
+
+
+            const segundos =
+                Math.floor(
+                    (
+                        distancia %
+                        (1000 * 60)
+                    )
+                    /
+                    1000
+                );
+
+
+
+            document.getElementById(
+                "dias"
+            ).textContent =
+                String(dias).padStart(
+                    2,
+                    "0"
+                );
+
+
+            document.getElementById(
+                "horas"
+            ).textContent =
+                String(horas).padStart(
+                    2,
+                    "0"
+                );
+
+
+            document.getElementById(
+                "minutos"
+            ).textContent =
+                String(minutos).padStart(
+                    2,
+                    "0"
+                );
+
+
+            document.getElementById(
+                "segundos"
+            ).textContent =
+                String(segundos).padStart(
+                    2,
+                    "0"
+                );
+
+        }
+
+
+
+        atualizarContagem();
+
+
+        setInterval(
+            atualizarContagem,
+            1000
+        );
+
+
+
+        /* =====================================================
+           ANIMAÇÃO AO ROLAR
+        ====================================================== */
+
+        const elementos =
+            document.querySelectorAll(
+                ".animar"
+            );
+
+
+        const observador =
+            new IntersectionObserver(
+
+                function (entradas) {
+
+
+                    entradas.forEach(
+                        function (entrada) {
+
+
+                            if (
+                                entrada.isIntersecting
+                            ) {
+
+
+                                entrada.target
+                                    .classList
+                                    .add(
+                                        "visivel"
+                                    );
+
+                            }
+
+
+                        }
+                    );
+
+                },
+
+
+                {
+
+                    threshold: 0.12
+
+                }
+
+            );
+
+
+        elementos.forEach(
+            function (elemento) {
+
+                observador.observe(
+                    elemento
+                );
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
